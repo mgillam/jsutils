@@ -17,7 +17,8 @@ function StateWrapper(f, async){
                 return r;
             } : function(){
                 return cb(f.apply(null,arguments));
-            }
+            },
+            reset: function(){ state = false; console.log('reset'); }
         };
     })(false);
 }
